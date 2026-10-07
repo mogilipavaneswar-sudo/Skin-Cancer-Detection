@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DermaScan - Multimodal Skin Cancer Framework</title>
+    <meta name="description" content="Interactive Multimodal Deep Learning & Class-Balanced Framework for Skin Cancer Detection integrating clinical dermoscopy and patient metadata." />
+    <meta property="og:title" content="DermaScan - Multimodal Skin Cancer Framework" />
+    <meta property="og:description" content="Interactive Multimodal Deep Learning & Class-Balanced Framework for Skin Cancer Detection integrating clinical dermoscopy and patient metadata." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('dermafusion_theme');
+          var isDark = saved ? saved === 'dark' : true;
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('theme-light', 'light');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('theme-light', 'light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-white dark:bg-black text-neutral-900 dark:text-white antialiased selection:bg-amber-500 selection:text-black dark:selection:text-white" style="font-family: 'Tinos', 'Times New Roman', Times, Georgia, serif; font-weight: 400; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

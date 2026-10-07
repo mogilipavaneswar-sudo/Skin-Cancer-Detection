@@ -1,0 +1,6 @@
+{
+  "name": "DermaScan AI - Multimodal Skin Cancer Framework",
+  "description": "Interactive Multimodal Deep Learning & Class-Balanced Framework for Skin Cancer Detection integrating clinical dermoscopy and patient metadata.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

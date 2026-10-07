@@ -1,0 +1,296 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Tinos", "Times New Roman", Times, Georgia, serif;
+  --font-mono: "Tinos", "Times New Roman", Times, Georgia, serif;
+  --font-serif: "Tinos", "Times New Roman", Times, Georgia, serif;
+}
+
+*, ::before, ::after {
+  font-family: "Tinos", "Times New Roman", Times, Georgia, serif !important;
+  font-weight: 400 !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+pre,
+code,
+kbd,
+samp,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th,
+span,
+p,
+div,
+label,
+a {
+  font-family: "Tinos", "Times New Roman", Times, Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.012em;
+}
+
+/* Keep bold removed as requested while preserving clear legibility */
+.font-bold,
+.font-semibold,
+.font-medium,
+.font-extrabold,
+.font-black {
+  font-weight: 400 !important;
+}
+
+/* Clarity boost: prevent tiny text from blurring into unreadable hairlines */
+.text-\[8px\],
+.text-\[9px\],
+.text-\[10px\] {
+  font-size: 11.5px !important;
+  line-height: 1.35 !important;
+}
+
+.text-\[11px\],
+.text-xs {
+  font-size: 12.5px !important;
+  line-height: 1.4 !important;
+}
+
+/* Clarity boost: ensure appropriate contrast in both dark and light modes */
+.dark .text-slate-400 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+.dark .text-slate-600 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .text-slate-400,
+.theme-light .text-slate-400 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .text-slate-500,
+.theme-light .text-slate-500 {
+  color: #475569 !important;
+}
+
+html:not(.dark) .text-slate-600,
+.theme-light .text-slate-600 {
+  color: #334155 !important;
+}
+
+.text-gray-400 {
+  color: #d1d5db !important;
+}
+
+.text-gray-500 {
+  color: #9ca3af !important;
+}
+
+/* SVG Chart text clarity */
+text,
+tspan {
+  font-family: "Tinos", "Times New Roman", Times, Georgia, serif !important;
+  font-weight: 400 !important;
+  text-rendering: geometricPrecision !important;
+}
+
+/* ========================================================
+   THEME SUPPORT: DRAKE MODE (PURE BLACK) & LIGHT MODE (PURE WHITE)
+   ======================================================== */
+html.dark,
+html.dark body {
+  color-scheme: dark !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.dark #root {
+  background-color: #000000 !important;
+  min-height: 100vh;
+}
+
+/* Eliminate white background leaks on any element in Drake mode */
+html.dark .bg-white,
+html.dark .bg-slate-50,
+html.dark .bg-slate-100,
+html.dark .bg-neutral-50,
+html.dark .bg-neutral-100,
+html.dark .bg-gray-50,
+html.dark .bg-gray-100 {
+  background-color: #000000 !important;
+}
+
+html.dark [class*="dark:bg-slate-"],
+html.dark [class*="dark:bg-neutral-"] {
+  background-color: #000000 !important;
+}
+
+html.dark header,
+html.dark aside,
+html.dark footer,
+html.dark main,
+html.dark nav,
+html.dark section {
+  background-color: #000000 !important;
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  color-scheme: dark !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #27272a !important;
+}
+
+/* Ensure text contrast in dark mode */
+html.dark .text-slate-900,
+html.dark .text-neutral-900,
+html.dark .text-gray-900,
+html.dark .text-black {
+  color: #ffffff !important;
+}
+
+html.dark .text-slate-800,
+html.dark .text-neutral-800,
+html.dark .text-gray-800 {
+  color: #f4f4f5 !important;
+}
+
+html.dark .text-slate-700,
+html.dark .text-neutral-700,
+html.dark .text-gray-700 {
+  color: #e4e4e7 !important;
+}
+
+html.dark .text-slate-600,
+html.dark .text-neutral-600,
+html.dark .text-gray-600 {
+  color: #d4d4d8 !important;
+}
+
+html.dark .border-slate-200,
+html.dark .border-slate-300,
+html.dark .border-neutral-200,
+html.dark .border-neutral-300 {
+  border-color: #27272a !important;
+}
+
+/* White Glow & Beacon Keyframes for Drake Mode Menu Bar Buttons */
+@keyframes whitePulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.45), inset 0 0 6px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(255, 255, 255, 0.9), inset 0 0 10px rgba(255, 255, 255, 0.4);
+    border-color: #ffffff;
+  }
+}
+
+.animate-white-glow {
+  animation: whitePulseGlow 2.2s ease-in-out infinite;
+}
+
+@keyframes whiteBeaconPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85);
+  }
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 7px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.animate-white-beacon {
+  animation: whiteBeaconPulse 1.8s infinite cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* Light Mode Theme - Pure Clean Light */
+html:not(.dark),
+html:not(.dark) body,
+html.theme-light,
+html.theme-light body,
+html.light,
+html.light body {
+  color-scheme: light !important;
+  background-color: #ffffff !important;
+  color: #09090b !important;
+}
+
+html:not(.dark) #root,
+html.theme-light #root,
+html.light #root {
+  background-color: #ffffff !important;
+  min-height: 100vh;
+}
+
+html:not(.dark) input,
+html:not(.dark) select,
+html:not(.dark) textarea,
+html.theme-light input,
+html.theme-light select,
+html.theme-light textarea {
+  color-scheme: light !important;
+}
+
+/* Scrollbars for both Drake and Light modes */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track,
+html.theme-light ::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb,
+html.theme-light ::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  border-radius: 9999px;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover,
+html.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: #d4d4d8;
+}
+
+
+
