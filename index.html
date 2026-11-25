@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DermaScan - Multimodal Skin Cancer Framework</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23000'/%3E%3Cpath d='M6 17h5l3-7 4 12 3-5h5' fill='none' stroke='%2306b6d4' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <meta name="description" content="Interactive Multimodal Deep Learning & Class-Balanced Framework for Skin Cancer Detection integrating clinical dermoscopy and patient metadata." />
+    <meta property="og:title" content="DermaScan - Multimodal Skin Cancer Framework" />
+    <meta property="og:description" content="Interactive Multimodal Deep Learning & Class-Balanced Framework for Skin Cancer Detection integrating clinical dermoscopy and patient metadata." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('dermafusion_theme');
+          var isDark = saved ? saved === 'dark' : true;
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('theme-light', 'light');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('theme-light', 'light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-white dark:bg-black text-neutral-900 dark:text-white antialiased selection:bg-amber-500 selection:text-black dark:selection:text-white" style="font-family: 'Tinos', 'Times New Roman', Times, Georgia, serif; font-weight: 400; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
